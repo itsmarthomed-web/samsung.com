@@ -37,7 +37,7 @@
             background: #000;
             color: #fff;
             text-align: center;
-            font-size: 13px;
+            font-size: 12px;
             padding: 8px;
             font-weight: 500;
         }
@@ -46,7 +46,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 8%;
+            padding: 15px 5%;
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             position: sticky;
@@ -58,7 +58,7 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 900;
             letter-spacing: 2px;
             color: #000;
@@ -67,7 +67,7 @@
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             font-size: 14px;
             font-weight: 500;
         }
@@ -77,6 +77,7 @@
             text-decoration: none;
             transition: color 0.2s ease;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -84,8 +85,18 @@
             font-weight: 700;
         }
 
+        /* Mobile menu toggle button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #000;
+        }
+
         .hero {
-            padding: 100px 8% 60px 8%;
+            padding: 80px 5% 50px 5%;
             text-align: center;
             background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
         }
@@ -94,17 +105,17 @@
             display: inline-block;
             background: rgba(20, 40, 160, 0.08);
             color: var(--primary);
-            padding: 6px 20px;
+            padding: 6px 16px;
             border-radius: 30px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .hero h1 {
-            font-size: clamp(32px, 4vw, 56px);
+            font-size: clamp(28px, 5vw, 50px);
             font-weight: 900;
             margin-bottom: 15px;
             line-height: 1.2;
@@ -116,39 +127,40 @@
         }
 
         .hero p {
-            font-size: clamp(15px, 1.8vw, 18px);
+            font-size: clamp(14px, 2vw, 18px);
             color: var(--text-muted);
             max-width: 700px;
-            margin: 0 auto 35px auto;
+            margin: 0 auto 30px auto;
         }
 
         /* Countdown Timer */
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         .time-box {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 12px 18px;
+            padding: 10px 14px;
             border-radius: 12px;
-            min-width: 80px;
+            min-width: 70px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .time-box span {
             display: block;
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 900;
             color: var(--primary);
         }
 
         .time-box label {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--text-muted);
             text-transform: uppercase;
             font-weight: 500;
@@ -157,17 +169,17 @@
         /* Products Grid */
         .section-title {
             text-align: center;
-            font-size: 30px;
+            font-size: 26px;
             font-weight: 800;
-            margin-bottom: 40px;
+            margin: 40px 0 20px 0;
             color: #1a1a1a;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            padding: 0 8% 80px 8%;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            padding: 0 5% 50px 5%;
         }
 
         .product-card {
@@ -183,45 +195,43 @@
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            border-color: #d0d0d0;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
         .discount-badge {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             background: var(--danger);
             color: white;
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 12px;
             z-index: 10;
         }
 
         .device-image-box {
             width: 100%;
-            height: 240px;
+            height: 220px;
             background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             border-bottom: 1px solid var(--border-color);
-            position: relative;
             padding: 20px;
         }
 
         .product-content {
-            padding: 25px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .product-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             margin-bottom: 8px;
             color: #1a1a1a;
@@ -230,7 +240,7 @@
         .product-desc {
             font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             flex-grow: 1;
         }
 
@@ -246,19 +256,19 @@
         .pricing {
             display: flex;
             align-items: baseline;
-            gap: 12px;
+            gap: 10px;
             border-top: 1px solid var(--border-color);
             padding-top: 15px;
         }
 
         .old-price {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-muted);
             text-decoration: line-through;
         }
 
         .new-price {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 900;
             color: var(--success);
         }
@@ -266,61 +276,88 @@
         /* Official Benefits Banner */
         .benefits-section {
             background: #fff;
-            padding: 60px 8%;
+            padding: 40px 5%;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
             text-align: center;
         }
 
         .benefit-item h4 {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
         .benefit-item p {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
         }
 
         /* Promo banner */
         .promo-banner {
-            margin: 0 8% 80px 8%;
+            margin: 0 5% 50px 5%;
             background: linear-gradient(135deg, #1428a0 0%, #081248 100%);
             border-radius: 20px;
-            padding: 40px;
+            padding: 30px 20px;
             text-align: center;
             color: white;
-            box-shadow: 0 15px 35px rgba(20, 40, 160, 0.2);
+            box-shadow: 0 10px 25px rgba(20, 40, 160, 0.2);
         }
 
         .promo-banner h2 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 900;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .promo-banner p {
             color: #d0d8f0;
-            font-size: 16px;
+            font-size: 15px;
             max-width: 600px;
             margin: 0 auto;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 25px;
             background: #ffffff;
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 12px;
             border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                padding: 20px;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                text-align: center;
+                gap: 15px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hero {
+                padding: 50px 5% 30px 5%;
+            }
         }
     </style>
 </head>
@@ -332,10 +369,11 @@
 
     <header>
         <a href="#" class="logo">SAMSUNG</a>
-        <nav class="nav-links">
-            <a href="#smartphones">סמארטפונים</a>
-            <a href="#foldables">מתקפלים</a>
-            <a href="#tablets">טאבלטים ואביזרים</a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav class="nav-links" id="navLinks">
+            <a href="#smartphones" onclick="toggleMenu()">סמארטפונים</a>
+            <a href="#foldables" onclick="toggleMenu()">מתקפלים</a>
+            <a href="#tablets" onclick="toggleMenu()">טאבלטים ואביזרים</a>
             <a href="https://www.samsung.com/il/" target="_blank">לאתר הרשמי ↗</a>
         </nav>
     </header>
@@ -343,7 +381,7 @@
     <section class="hero">
         <div class="badge">השקת ענק רשמית • ינואר 2027</div>
         <h1>מבצעי השנה החדשה ב-Samsung<br><span>שווה לחכות לינואר 2027</span></h1>
-        <p> החל מה-1 בינואר 2027, כל דגמי הדגל, המתקפלים והאקוסיסטם של סמסונג בהנחות חסרות תקדים של 50% ישירות מהיבואן הרשמי.</p>
+        <p>החל מה-1 בינואר 2027, כל דגמי הדגל, המתקפלים והאקוסיסטם של סמסונג בהנחות חסרות תקדים של 50% ישירות מהיבואן הרשמי.</p>
         
         <div class="countdown-container">
             <div class="time-box">
@@ -372,7 +410,7 @@
         <div class="product-card">
             <div class="discount-badge">50% הנחה</div>
             <div class="device-image-box">
-                <svg width="110" height="200" viewBox="0 0 120 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="100" height="180" viewBox="0 0 120 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="5" y="5" width="110" height="210" rx="16" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
                     <rect x="10" y="10" width="100" height="200" rx="12" fill="url(#s26grad)"/>
                     <circle cx="22" cy="25" r="4" fill="#000" stroke="#444" stroke-width="1.5"/>
@@ -406,7 +444,7 @@
         <div class="product-card">
             <div class="discount-badge">50% הנחה</div>
             <div class="device-image-box">
-                <svg width="105" height="200" viewBox="0 0 115 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="95" height="180" viewBox="0 0 115 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="5" y="5" width="105" height="210" rx="16" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
                     <rect x="10" y="10" width="95" height="200" rx="12" fill="url(#s26plusgrad)"/>
                     <circle cx="20" cy="25" r="3.5" fill="#000" stroke="#444" stroke-width="1.5"/>
@@ -443,7 +481,7 @@
         <div class="product-card">
             <div class="discount-badge">50% הנחה</div>
             <div class="device-image-box">
-                <svg width="130" height="200" viewBox="0 0 140 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="110" height="180" viewBox="0 0 140 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="5" y="10" width="130" height="200" rx="14" fill="#111" stroke="#444" stroke-width="3"/>
                     <rect x="10" y="15" width="58" height="190" rx="10" fill="url(#foldgrad1)"/>
                     <line x1="70" y1="15" x2="70" y2="205" stroke="#222" stroke-width="4"/>
@@ -479,7 +517,7 @@
         <div class="product-card">
             <div class="discount-badge">50% הנחה</div>
             <div class="device-image-box">
-                <svg width="100" height="200" viewBox="0 0 110 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="90" height="180" viewBox="0 0 110 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="5" y="10" width="100" height="200" rx="18" fill="#111" stroke="#444" stroke-width="3"/>
                     <rect x="10" y="15" width="90" height="90" rx="12" fill="#0f172a"/>
                     <rect x="15" y="30" width="80" height="60" rx="8" fill="#1e3a8a"/>
@@ -516,7 +554,7 @@
         <div class="product-card">
             <div class="discount-badge">50% הנחה</div>
             <div class="device-image-box">
-                <svg width="150" height="170" viewBox="0 0 180 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="130" height="150" viewBox="0 0 180 130" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="10" y="10" width="160" height="110" rx="10" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
                     <rect x="16" y="16" width="148" height="98" rx="6" fill="#0f172a"/>
                     <text x="90" y="68" fill="#fff" font-family="Heebo" font-weight="900" font-size="13" text-anchor="middle">Galaxy Tab S12</text>
@@ -541,7 +579,7 @@
         <div class="product-card">
             <div class="discount-badge">50% הנחה</div>
             <div class="device-image-box">
-                <svg width="120" height="170" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="110" height="150" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="60" cy="65" r="42" fill="#111" stroke="#333" stroke-width="4"/>
                     <circle cx="60" cy="65" r="35" fill="url(#watchgrad)"/>
                     <text x="60" y="62" fill="#fff" font-family="Heebo" font-weight="900" font-size="11" text-anchor="middle">Watch Ultra2</text>
@@ -588,7 +626,7 @@
 
     <div class="promo-banner">
         <h2>ההמתנה השתלמה - ינואר 2027</h2>
-        <p>המבצעים יהיו זמינים החל מה-1.1.27 בחנות הרשמית ובנקודות השיווק המורשות.</p>
+        <p> המבצעים יהיו זמינים החל מה-1.1.27 בחנות הרשמית ובנקודות השיווק המורשות.</p>
     </div>
 
     <footer>
@@ -596,6 +634,13 @@
     </footer>
 
     <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Countdown timer
         const targetDate = new Date("Jan 1, 2027 00:00:00").getTime();
 
         function updateCountdown() {
