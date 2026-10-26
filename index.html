@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Israel | מבצעי השקה מיוחדים לינואר 2027</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --primary: #1428a0;
+            --accent: #0066cc;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --danger: #d9381e;
+            --success: #00875a;
+            --border-color: #e5e5e5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Heebo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            font-size: 13px;
+            padding: 8px;
+            font-weight: 500;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .hero {
+            padding: 100px 8% 60px 8%;
+            text-align: center;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(20, 40, 160, 0.08);
+            color: var(--primary);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 4vw, 56px);
+            font-weight: 900;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: clamp(15px, 1.8vw, 18px);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 35px auto;
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .time-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 12px 18px;
+            border-radius: 12px;
+            min-width: 80px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .time-box label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Products Grid */
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 8% 80px 8%;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border-color: #d0d0d0;
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--danger);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            z-index: 10;
+        }
+
+        .device-image-box {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            padding: 20px;
+        }
+
+        .product-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .specs-list {
+            font-size: 12px;
+            color: #444;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .pricing {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .old-price {
+            font-size: 15px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .new-price {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--success);
+        }
+
+        /* Official Benefits Banner */
+        .benefits-section {
+            background: #fff;
+            padding: 60px 8%;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 60px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .benefit-item h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .benefit-item p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Promo banner */
+        .promo-banner {
+            margin: 0 8% 80px 8%;
+            background: linear-gradient(135deg, #1428a0 0%, #081248 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 35px rgba(20, 40, 160, 0.2);
+        }
+
+        .promo-banner h2 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .promo-banner p {
+            color: #d0d8f0;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #ffffff;
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        משלוח מהיר חינם עד בית הלקוח • אחריות רשמית מטעם סמסונג ישראל
+    </div>
+
+    <header>
+        <a href="#" class="logo">SAMSUNG</a>
+        <nav class="nav-links">
+            <a href="#smartphones">סמארטפונים</a>
+            <a href="#foldables">מתקפלים</a>
+            <a href="#tablets">טאבלטים ואביזרים</a>
+            <a href="https://www.samsung.com/il/" target="_blank">לאתר הרשמי ↗</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="badge">השקת ענק רשמית • ינואר 2027</div>
+        <h1>מבצעי השנה החדשה ב-Samsung<br><span>שווה לחכות לינואר 2027</span></h1>
+        <p> החל מה-1 בינואר 2027, כל דגמי הדגל, המתקפלים והאקוסיסטם של סמסונג בהנחות חסרות תקדים של 50% ישירות מהיבואן הרשמי.</p>
+        
+        <div class="countdown-container">
+            <div class="time-box">
+                <span id="days">65</span>
+                <label>ימים</label>
+            </div>
+            <div class="time-box">
+                <span id="hours">12</span>
+                <label>שעות</label>
+            </div>
+            <div class="time-box">
+                <span id="minutes">45</span>
+                <label>דקות</label>
+            </div>
+            <div class="time-box">
+                <span id="seconds">30</span>
+                <label>שניות</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- סמארטפונים -->
+    <h2 id="smartphones" class="section-title">סמארטפונים דגל (סדרה S)</h2>
+    <div class="products-grid">
+        <!-- S26 Ultra -->
+        <div class="product-card">
+            <div class="discount-badge">50% הנחה</div>
+            <div class="device-image-box">
+                <svg width="110" height="200" viewBox="0 0 120 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="110" height="210" rx="16" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
+                    <rect x="10" y="10" width="100" height="200" rx="12" fill="url(#s26grad)"/>
+                    <circle cx="22" cy="25" r="4" fill="#000" stroke="#444" stroke-width="1.5"/>
+                    <circle cx="22" cy="38" r="3.5" fill="#000" stroke="#444" stroke-width="1.5"/>
+                    <circle cx="22" cy="50" r="3" fill="#000" stroke="#444" stroke-width="1.5"/>
+                    <text x="60" y="115" fill="#fff" font-family="Heebo" font-weight="900" font-size="14" text-anchor="middle">S26 Ultra</text>
+                    <text x="60" y="132" fill="#00f2fe" font-family="Heebo" font-weight="700" font-size="10" text-anchor="middle">Titanium Gray</text>
+                    <defs>
+                        <linearGradient id="s26grad" x1="0" y1="0" x2="120" y2="220" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#222b45"/>
+                            <stop offset="100%" stop-color="#0b0f19"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="product-content">
+                <h3 class="product-title">Galaxy S26 Ultra</h3>
+                <p class="product-desc">פסגת הטכנולוגיה של סמסונג. מצלמת 200 מגה-פיקסל מתקדמת וגוף טיטניום עמיד.</p>
+                <div class="specs-list">
+                    • מעבד Snapdragon עתיר ביצועים<br>
+                    • אבטחת מידע מתקדמת Samsung Knox
+                </div>
+                <div class="pricing">
+                    <span class="old-price">₪5,499</span>
+                    <span class="new-price">₪2,749</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- S26 / S26+ -->
+        <div class="product-card">
+            <div class="discount-badge">50% הנחה</div>
+            <div class="device-image-box">
+                <svg width="105" height="200" viewBox="0 0 115 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="105" height="210" rx="16" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
+                    <rect x="10" y="10" width="95" height="200" rx="12" fill="url(#s26plusgrad)"/>
+                    <circle cx="20" cy="25" r="3.5" fill="#000" stroke="#444" stroke-width="1.5"/>
+                    <circle cx="20" cy="37" r="3.5" fill="#000" stroke="#444" stroke-width="1.5"/>
+                    <text x="57" y="115" fill="#fff" font-family="Heebo" font-weight="900" font-size="14" text-anchor="middle">Galaxy S26</text>
+                    <text x="57" y="132" fill="#38bdf8" font-family="Heebo" font-weight="700" font-size="10" text-anchor="middle">Dynamic AMOLED</text>
+                    <defs>
+                        <linearGradient id="s26plusgrad" x1="0" y1="0" x2="115" y2="220" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#0284c7"/>
+                            <stop offset="100%" stop-color="#0369a1"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="product-content">
+                <h3 class="product-title">Galaxy S26 / S26+</h3>
+                <p class="product-desc">עוצמה חסרת פשרות בעיצוב דק וקל משקל לאחיזה מושלמת ביום-יום.</p>
+                <div class="specs-list">
+                    • סוללה חכמה המתאימה את עצמה<br>
+                    • מסך בהיר במיוחד לשמש ישראלית
+                </div>
+                <div class="pricing">
+                    <span class="old-price">₪3,899</span>
+                    <span class="new-price">₪1,949</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- מתקפלים -->
+    <h2 id="foldables" class="section-title">מכשירים מתקפלים (סדרה Z)</h2>
+    <div class="products-grid">
+        <!-- Z Fold8 -->
+        <div class="product-card">
+            <div class="discount-badge">50% הנחה</div>
+            <div class="device-image-box">
+                <svg width="130" height="200" viewBox="0 0 140 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="10" width="130" height="200" rx="14" fill="#111" stroke="#444" stroke-width="3"/>
+                    <rect x="10" y="15" width="58" height="190" rx="10" fill="url(#foldgrad1)"/>
+                    <line x1="70" y1="15" x2="70" y2="205" stroke="#222" stroke-width="4"/>
+                    <rect x="72" y="15" width="58" height="190" rx="10" fill="url(#foldgrad2)"/>
+                    <text x="70" y="110" fill="#fff" font-family="Heebo" font-weight="900" font-size="13" text-anchor="middle">Z Fold8</text>
+                    <defs>
+                        <linearGradient id="foldgrad1" x1="10" y1="15" x2="68" y2="205" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#1e293b"/>
+                            <stop offset="100%" stop-color="#0f172a"/>
+                        </linearGradient>
+                        <linearGradient id="foldgrad2" x1="72" y1="15" x2="130" y2="205" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#334155"/>
+                            <stop offset="100%" stop-color="#1e293b"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="product-content">
+                <h3 class="product-title">Galaxy Z Fold8</h3>
+                <p class="product-desc">חוויית מסך כפול פרימיום, עיצוב דק במיוחד ומעבד הדור הבא לעבודה ופרודוקטיביות.</p>
+                <div class="specs-list">
+                    • מסך ראשי Dynamic AMOLED 2X<br>
+                    • תמיכה מלאה ב-Galaxy AI וב-S-Pen
+                </div>
+                <div class="pricing">
+                    <span class="old-price">₪7,499</span>
+                    <span class="new-price">₪3,749</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Z Flip8 -->
+        <div class="product-card">
+            <div class="discount-badge">50% הנחה</div>
+            <div class="device-image-box">
+                <svg width="100" height="200" viewBox="0 0 110 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="10" width="100" height="200" rx="18" fill="#111" stroke="#444" stroke-width="3"/>
+                    <rect x="10" y="15" width="90" height="90" rx="12" fill="#0f172a"/>
+                    <rect x="15" y="30" width="80" height="60" rx="8" fill="#1e3a8a"/>
+                    <rect x="10" y="110" width="90" height="95" rx="8" fill="url(#flipgrad)"/>
+                    <text x="55" y="65" fill="#fff" font-family="Heebo" font-weight="700" font-size="11" text-anchor="middle">FlexWindow</text>
+                    <text x="55" y="155" fill="#fff" font-family="Heebo" font-weight="900" font-size="13" text-anchor="middle">Z Flip8</text>
+                    <defs>
+                        <linearGradient id="flipgrad" x1="10" y1="110" x2="100" y2="205" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#3b82f6"/>
+                            <stop offset="100%" stop-color="#1d4ed8"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="product-content">
+                <h3 class="product-title">Galaxy Z Flip8</h3>
+                <p class="product-desc">מכשיר הצדפה המתקפל והאופנתי עם מסך חיצוני חכם וצילומי סלפי בווסט פלקס מתקדם.</p>
+                <div class="specs-list">
+                    • FlexWindow חיצוני מוגדל<br>
+                    • עיצוב קומפקטי ויוקרתי
+                </div>
+                <div class="pricing">
+                    <span class="old-price">₪4,599</span>
+                    <span class="new-price">₪2,299</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- טאבלטים ואביזרים -->
+    <h2 id="tablets" class="section-title">טאבלטים ואביזרים נלווים</h2>
+    <div class="products-grid">
+        <!-- Tab S12 -->
+        <div class="product-card">
+            <div class="discount-badge">50% הנחה</div>
+            <div class="device-image-box">
+                <svg width="150" height="170" viewBox="0 0 180 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="10" width="160" height="110" rx="10" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
+                    <rect x="16" y="16" width="148" height="98" rx="6" fill="#0f172a"/>
+                    <text x="90" y="68" fill="#fff" font-family="Heebo" font-weight="900" font-size="13" text-anchor="middle">Galaxy Tab S12</text>
+                    <text x="90" y="85" fill="#38bdf8" font-family="Heebo" font-weight="700" font-size="9" text-anchor="middle">AMOLED Display</text>
+                </svg>
+            </div>
+            <div class="product-content">
+                <h3 class="product-title">Galaxy Tab S12 Series</h3>
+                <p class="product-desc">טאבלט עבודה ויצירה מושלם עם מסך ענק, סוללה חזקה ותמיכה ב-S-Pen.</p>
+                <div class="specs-list">
+                    • חוויית ריבוי משימות מתקדמת<br>
+                    • כולל מקלדת חכמה בערכה
+                </div>
+                <div class="pricing">
+                    <span class="old-price">₪3,999</span>
+                    <span class="new-price">₪1,999</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Watch & Buds -->
+        <div class="product-card">
+            <div class="discount-badge">50% הנחה</div>
+            <div class="device-image-box">
+                <svg width="120" height="170" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="65" r="42" fill="#111" stroke="#333" stroke-width="4"/>
+                    <circle cx="60" cy="65" r="35" fill="url(#watchgrad)"/>
+                    <text x="60" y="62" fill="#fff" font-family="Heebo" font-weight="900" font-size="11" text-anchor="middle">Watch Ultra2</text>
+                    <text x="60" y="78" fill="#00f2fe" font-family="Heebo" font-weight="700" font-size="9" text-anchor="middle">Titanium</text>
+                    <defs>
+                        <linearGradient id="watchgrad" x1="25" y1="30" x2="95" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#1e293b"/>
+                            <stop offset="100%" stop-color="#0f172a"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="product-content">
+                <h3 class="product-title">Galaxy Watch Ultra2 & Buds</h3>
+                <p class="product-desc">שעון ספורט קיצוני בעיצוב טיטניום ואוזניות אלחוטיות עם ביטול רעשים אקטיבי.</p>
+                <div class="specs-list">
+                    • ניטור בריאות וכושר מתקדם 24/7<br>
+                    • סאונד אולפני נקי ועמוק
+                </div>
+                <div class="pricing">
+                    <span class="old-price">₪2,499</span>
+                    <span class="new-price">₪1,249</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="benefits-section">
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <h4>אחריות רשמית</h4>
+                <p>שירות ותמיכה מבית סמסונג ישראל עם מעבדות שירות מורשות בכל הארץ.</p>
+            </div>
+            <div class="benefit-item">
+                <h4>פריסת תשלומים נוחה</h4>
+                <p>עד 36 תשלומים נוחים ללא ריבית במעמד הרכישה באתר.</p>
+            </div>
+            <div class="benefit-item">
+                <h4>טרייד-אין משתלם</h4>
+                <p>שדרגו את המכשיר הישן שלכם וקבלו זיכוי מיידי בעת ההשקה.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="promo-banner">
+        <h2>ההמתנה השתלמה - ינואר 2027</h2>
+        <p>המבצעים יהיו זמינים החל מה-1.1.27 בחנות הרשמית ובנקודות השיווק המורשות.</p>
+    </div>
+
+    <footer>
+        <p>© 2026-2027 Samsung Electronics Co., Ltd. כל הזכויות שמורות. האתר מציג הודעת טיזר רשמית לקראת מבצעי ינואר 2027.</p>
+    </footer>
+
+    <script>
+        const targetDate = new Date("Jan 1, 2027 00:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) return;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
